@@ -1,0 +1,14 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  #- caption: Introduction
+  #- caption: User Guide
+  - caption: Developer Guide
+    chapters:
+    - file: content/developers/replicate/0-devdocs.md
+      sections:
+      - file: content/developers/replicate/1-sources.md
+      - file: content/developers/replicate/2-system.md
