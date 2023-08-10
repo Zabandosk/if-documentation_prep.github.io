@@ -28,7 +28,7 @@ html:
   use_repository_button: true
   # google_analytics_id: G-QKKV7Q3XE3
   extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-  extra_footer: v. α [09-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+  extra_footer: v. α [10-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 sphinx:
   config:

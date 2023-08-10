@@ -12,3 +12,4 @@ parts:
       sections:
       - file: content/developers/replicate/1-sources.md
       - file: content/developers/replicate/2-system.md
+      - file: content/developers/replicate/3-install.md

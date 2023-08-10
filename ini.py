@@ -22,4 +22,4 @@ def generate_password(length):
         password += random.choice(string.ascii_letters + string.digits + string.punctuation)
     return password
 
-print(generate_password(10))
+print(generate_password(20))
