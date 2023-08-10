@@ -4,6 +4,19 @@ This section describes the system requirements implemented in the Imagining Futu
 
 ## Server
 
+- [Application server](#application-server)
+
+| Feature   |      Details      |      Required      |
+|----------|:-------------:|:-------------:|
+| Operating System |  Ubuntu 20.04 (LTS) x64 | Linux, Mac OS X 10.9+, or Windows Server 2012+ |
+| Memory |    8Gb   | 4Gb or more |
+| Storage | 80Gb disk | N/A |
+| Processor | 4 vCPUs | 2 vCPUs or more |
+
+**Note:** This configuration is the minimun to work with ElasticSearch. If you don't need ElasticSearch, you can use a virtual machine with 4Gb of memory and 2 vCPUs.
+
+- [Database server](#database-server)
+
 | Feature   |      Details      |      Required      |
 |----------|:-------------:|:-------------:|
 | Operating System |  Ubuntu 20.04 (LTS) x64 | Linux, Mac OS X 10.9+, or Windows Server 2012+ |
@@ -44,3 +57,20 @@ We skipped the installation of the php-process module, since there's no such mod
 
 ## Database
 
+We're using a separate server to host our database. In that way, we can control the disk space, the memory and the processor of the database server independently of the application server. This is an important decission, since the database server is the most demanding in terms of memory and processor.
+
+We installed Mysql Server version: 8.0.33-0ubuntu0.20.04.1 (Ubuntu) in the database server. The database server is configured to accept connections only from the application server. Before launching the application to production, it is important to reinforce the security of the database server to avoid unauthorized access.
+
+## Fail2ban
+
+We installed Fail2ban in the application server to avoid brute force attacks. We followed the instructions from [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-20-04).
+
+## Redis-server
+
+Redis is used to cache the results of the search engine. Installation is very straightforward, just follow the instructions from [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04).
+
+## Elasticsearch
+
+Elasticsearch is used to index the records in the database. We followed the instructions from [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-20-04). Collective Access documentation regarding [ElasticSearch](https://manual.collectiveaccess.org/providence/user/searchBrowse/searchEngines/elastic.html) points out that we need to install the version 2.0 or higher. We installed the version [7.17.12](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/release-notes-7.17.12.html).
+
+Elasticsearch is a very demanding software in terms of memory and processor. We recommend to use a virtual machine with 8Gb of memory and 4 vCPUs. Otherwise, you can use SQLsearch instead of ElasticSearch. In that case, you need to pay atention to resources consumption from the database side.
