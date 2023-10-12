@@ -39,7 +39,8 @@ The following packages and php modules were installed in the virtual machine tha
 ```bash
 wget zip curl dcraw ffmpeg git-all ghostscript imagemagick libapache2-mod-php8.2 libreoffice \
  mysql-client php8.2 php8.2-curl php8.2-gd php8.2-intl php8.2-xml php8.2-zip php8.2-bcmath \
- php8.2-mysql php8.2-mysqlnd php8.2-fileinfo php8.2-gmagick php8.2-opcache php8.2-mbstring
+ php8.2-mysql php8.2-mysqlnd php8.2-fileinfo php8.2-gmagick php8.2-opcache php8.2-mbstring \
+ php8.2-xmlrpc php8.2-posix php8.2-dev php8.2-redis php8.2-gmp
 ```
 
 We skipped the installation of the php-process module, as is pointed out in CA documentation, since there's no such module in Ubuntu 22.04.

@@ -48,6 +48,8 @@ Other folders that need permissions:
 ```bash
 chown -R www-data:www-data /var/www/html/ifrepo-admin/app/tmp
 chown -R www-data:www-data /var/www/html/ifrepo-admin/app/log
+chown -R /var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
+chmod -R 755 /var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
 ```
 
 It's possible that after installation some other folders needs to be created and/or permissions need to be changed. If that's the case, the installation process will let you know.

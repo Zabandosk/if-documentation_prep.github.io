@@ -13,3 +13,4 @@ parts:
       - file: content/developers/replicate/1-sources.md
       - file: content/developers/replicate/2-system.md
       - file: content/developers/replicate/3-install.md
+      - file: content/developers/local-remote-env/0-remote-local.md
