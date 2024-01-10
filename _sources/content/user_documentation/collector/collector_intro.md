@@ -1,4 +1,4 @@
-# User Role: Collector
+# Collector's Guide
 
 This is the user type for collectors of Imagining Futures Repository. They are responsible for:
 -xx
