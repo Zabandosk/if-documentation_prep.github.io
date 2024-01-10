@@ -1,6 +1,6 @@
-# Inicio
+# Imagining Futures Repository Documentation
 
-Here's going to be the introduction to the project.
+In this space, we will document all the relevant processes associated with accessing, maintaining, and developing the Imagining Futures Repository.
 
 ```{tableofcontents}
 ```

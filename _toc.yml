@@ -5,7 +5,18 @@ format: jb-book
 root: index
 parts:
   #- caption: Introduction
-  #- caption: User Guide
+  - caption: Project Management
+    chapters:
+    - file: content/project_management/metadata/metadata_schema.md
+      sections:
+      - file: content/project_management/metadata/resources.md
+      - file: content/project_management/metadata/controlled_vocabularies.md
+        sections:
+        - file: content/project_management/metadata/cv/1-languages.md
+        - file: content/project_management/metadata/cv/2-themes.md
+        - file: content/project_management/metadata/cv/3-countries.md
+        - file: content/project_management/metadata/cv/4-cultural_context.md
+        - file: content/project_management/metadata/cv/5-social_groups.md
   - caption: Developer Guide
     chapters:
     - file: content/developers/replicate/0-devdocs.md
