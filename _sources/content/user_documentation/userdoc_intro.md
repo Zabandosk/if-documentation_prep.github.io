@@ -1,0 +1,3 @@
+# User Documentation
+
+Under this section we will explain how to use the website and how to prepare and manage the data or how to export and use the the data depending on the user roles. We mainly group user roles under "Admin", "Collector" and "User". Each section you can find related info....
