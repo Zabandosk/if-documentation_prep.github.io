@@ -1,0 +1,816 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Web Application Deployment and Version Control Workflow &#8212; Imagining Futures repository documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/developers/local-remote-env/0-remote-local';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Providence and Pawtucket2 Installation" href="../replicate/3-install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo-if.png" class="logo__image only-light" alt="Imagining Futures repository documentation - Home"/>
+    <script>document.write(`<img src="../../../_static/logo-if.png" class="logo__image only-dark" alt="Imagining Futures repository documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Imagining Futures Repository Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project Management</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project_management/metadata/metadata_schema.html">Un/Archiving Metadata Schema</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../project_management/metadata/resources.html">Resources</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../project_management/metadata/controlled_vocabularies.html">Controlled Vocabularies</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../project_management/metadata/cv/1-languages.html">Languages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../project_management/metadata/cv/2-themes.html">Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../project_management/metadata/cv/3-countries.html">Countries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../project_management/metadata/cv/4-cultural_context.html">Cultural Context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../project_management/metadata/cv/5-social_groups.html">Social Groups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../replicate/0-devdocs.html">IF Repository Developers Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../replicate/1-sources.html">Collective Access Codebase Strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replicate/2-system.html">System requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../replicate/3-install.html">Providence and Pawtucket2 Installation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Web Application Deployment and Version Control Workflow</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ImaginingFutures/if-documentation" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ImaginingFutures/if-documentation/issues/new?title=Issue%20on%20page%20%2Fcontent/developers/local-remote-env/0-remote-local.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/developers/local-remote-env/0-remote-local.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Web Application Deployment and Version Control Workflow</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-logic">Workflow logic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branches">Branches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syncing-the-remote-and-local-systems">Syncing the Remote and Local Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-workflow">Implement the Workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-server">On the Server</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-application-is-not-installed">If application is not installed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-application-is-already-installed">If application is already installed</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-local-machine">On the Local Machine</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="web-application-deployment-and-version-control-workflow">
+<h1>Web Application Deployment and Version Control Workflow<a class="headerlink" href="#web-application-deployment-and-version-control-workflow" title="Permalink to this heading">#</a></h1>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>This document provides an overview of the deployment workflow and version control strategy. While we’ve provided a specific setup, please note that this can be adapted to different systems based on your requirements.</p>
+<section id="workflow-logic">
+<h3>Workflow logic<a class="headerlink" href="#workflow-logic" title="Permalink to this heading">#</a></h3>
+<p>Our workflow follows a straightforward logic:</p>
+<ul class="simple">
+<li><p>The remote system is the central repository, housing the primary, development, and <code class="docutils literal notranslate"><span class="pre">dev/php8</span></code> branches.</p></li>
+<li><p>The local system mirrors the remote repository and contains the main and development branches.</p></li>
+<li><p>The development branch is for testing new features and bug fixes. It’s merged into the main branch for production deployment.</p></li>
+<li><p>The main branch is dedicated to deploying code to the production server. It is not updated directly but is updated through merges from the development branch.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">dev/php8</span></code> branch is used to test changes for the forked codebase and is also merged into the main branch for production.</p></li>
+</ul>
+</section>
+<section id="branches">
+<h3>Branches<a class="headerlink" href="#branches" title="Permalink to this heading">#</a></h3>
+<p>We use three main branches:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code>: Reserved for production code deployments, updated through merges from the development branch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ifdev</span></code>:  For testing new features and bug fixes. Merged into main for production.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dev/php8</span></code>: For testing changes in the forked codebase. Merged into main for production.</p></li>
+</ul>
+</section>
+<section id="workflow">
+<h3>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">#</a></h3>
+<p>Our workflow can be summarized as follows:</p>
+<ol class="arabic simple">
+<li><p>Clone the remote repository to your local system.</p></li>
+<li><p>Create a new branch on the local system for testing new features and bug fixes.</p></li>
+<li><p>Commit changes to this new branch.</p></li>
+<li><p>Push the new branch to the remote repository.</p></li>
+<li><p>Merge the new branch into the development branch.</p></li>
+<li><p>Test new features and bug fixes in the development branch.</p></li>
+<li><p>Merge the development branch into the main branch for production deployment.</p></li>
+<li><p>Deploy the code to the production server.</p></li>
+</ol>
+</section>
+<section id="policies">
+<h3>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">#</a></h3>
+<p>We have established the following policies:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is never updated directly; it is updated by merging the development branch.</p></li>
+<li><p>Core code updates are merged into the <code class="docutils literal notranslate"><span class="pre">dev/php8</span></code> branch before being merged into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Access to the remote repository is restricted. If others need access, they create their branches and request merges for deployment.</p></li>
+</ul>
+</section>
+<section id="syncing-the-remote-and-local-systems">
+<h3>Syncing the Remote and Local Systems<a class="headerlink" href="#syncing-the-remote-and-local-systems" title="Permalink to this heading">#</a></h3>
+<p>To ensure synchronization between local and remote systems, follow these policies:</p>
+<ul class="simple">
+<li><p>Fetch the main and development branches on your local system before committing changes to development.</p></li>
+<li><p>Core code updates are periodically merged into the dev/php8 branch. Be sure to fetch these updates to keep your local system up to date.</p></li>
+</ul>
+</section>
+</section>
+<section id="implement-the-workflow">
+<h2>Implement the Workflow<a class="headerlink" href="#implement-the-workflow" title="Permalink to this heading">#</a></h2>
+<section id="on-the-server">
+<h3>On the Server<a class="headerlink" href="#on-the-server" title="Permalink to this heading">#</a></h3>
+<section id="if-application-is-not-installed">
+<h4>If application is not installed<a class="headerlink" href="#if-application-is-not-installed" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Clone the Repository and prepare permissions</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>--branch<span class="w"> </span>dev/php8<span class="w"> </span>https://github.com/collectiveaccess/providence.git<span class="w"> </span>/var/www/html/ifrepo-admin
+
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>imaginingfutures:imaginingfutures<span class="w"> </span>/var/www/html/ifrepo-admin
+sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span>u+w<span class="w"> </span>/var/www/html/ifrepo-admin
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Create and Switch to the <code class="docutils literal notranslate"><span class="pre">main</span></code> Branch</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>main
+git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>main
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Install</strong></p></li>
+</ol>
+<p>Follow the general installation instructions given in <a class="reference internal" href="../replicate/3-install.html"><span class="doc std std-doc">install</span></a>.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Edit .gitignore to Accept Changes in app/conf/local/</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>/var/www/html/ifrepo-admin/.gitignore
+</pre></div>
+</div>
+<p>Delete the following lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>app/conf/local/*
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Commit Changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> Branch</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Tracking in main&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Configure Receive Hooks</strong></p></li>
+</ol>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Use with caution. This will overwrite any changes made to the server. Ensure that you have a strong update policy in place before proceeding. Also, ensure that the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is up to date with the <code class="docutils literal notranslate"><span class="pre">dev/php8</span></code> branch.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>receive.denyCurrentBranch<span class="w"> </span>updateInstead
+</pre></div>
+</div>
+</section>
+<section id="if-application-is-already-installed">
+<h4>If application is already installed<a class="headerlink" href="#if-application-is-already-installed" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Backup Existing Application</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>/var/www/html/ifrepo-admin<span class="w"> </span>/var/www/html/ifrepo-admin-safe
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Clone the Repository and Prepare Permissions</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>--branch<span class="w"> </span>dev/php8<span class="w"> </span>https://github.com/collectiveaccess/providence.git<span class="w"> </span>/var/www/html/ifrepo-admin
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>imaginingfutures:imaginingfutures<span class="w"> </span>/var/www/html/ifrepo-admin
+sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span>u+w<span class="w"> </span>/var/www/html/ifrepo-admin
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Create and Switch to the main Branch</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>main
+git<span class="w"> </span>branch<span class="w"> </span>-m<span class="w"> </span>main
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Copy Necessary Files</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/setup.php<span class="w"> </span>/var/www/html/ifrepo-admin/setup.php
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/app/conf/app.conf<span class="w"> </span>/var/www/html/ifrepo-admin/app/conf/local/app.conf
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/app/conf/global.conf<span class="w"> </span>/var/www/html/ifrepo-admin/app/conf/local/global.conf
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/app/conf/datetime.conf<span class="w"> </span>/var/www/html/ifrepo-admin/app/conf/local/datetime.conf
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/app/conf/external_applications.conf<span class="w"> </span>/var/www/html/ifrepo-admin/app/conf/local/external_applications.conf
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/app/conf/navigation.conf<span class="w"> </span>/var/www/html/ifrepo-admin/app/conf/local/navigation.conf
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/app/lib/Parsers/TimeExpressionParser.php<span class="w"> </span>/var/www/html/ifrepo-admin/app/lib/Parsers/TimeExpressionParser.php
+cp<span class="w"> </span>/var/www/html/ifrepo-admin-safe/composer.json<span class="w"> </span>/var/www/html/ifrepo-admin/composer.json
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Install Composer Dependencies</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>install<span class="w"> </span>--no-dev<span class="w"> </span>--optimize-autoloader<span class="w"> </span>--working-dir<span class="o">=</span>/var/www/html/ifrepo-admin
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Create Symlink for Media (depending of your original installation)</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/mnt/s3storage<span class="w"> </span>/var/www/html/ifrepo-admin/media
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p><strong>Set Permissions and Ownership</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/media/
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/app/tmp
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/app/log
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/uploads
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/media
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/app/tmp
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/app/log
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/uploads
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p><strong>Copy HTMLPurifier Definitions</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>/var/www/html/ifrepo-admin-safe/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache<span class="w"> </span>/var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p><strong>Remove Backup Directory</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/www/html/ifrepo-admin-safe
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p><strong>Edit .gitignore to Accept Changes in app/conf/local/</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>/var/www/html/ifrepo-admin/.gitignore
+</pre></div>
+</div>
+<p>Delete the following lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>app/conf/local/*
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p><strong>Commit Changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> Branch</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Tracking in main&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p><strong>Configure Receive Hooks</strong></p></li>
+</ol>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Use with caution. This will overwrite any changes made to the server. Ensure that you have a strong update policy in place before proceeding. Also, ensure that the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is up to date with the <code class="docutils literal notranslate"><span class="pre">dev/php8</span></code> branch.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>receive.denyCurrentBranch<span class="w"> </span>updateInstead
+</pre></div>
+</div>
+</section>
+</section>
+<section id="on-the-local-machine">
+<h3>On the Local Machine<a class="headerlink" href="#on-the-local-machine" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Clone the Repository</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>root@157.245.30.79:/var/www/html/ifrepo-admin/.git<span class="w"> </span>ifrepo-admin
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Set Permissions and Ownership</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>imaginingfutures:imaginingfutures<span class="w"> </span>/var/www/html/ifrepo-admin
+sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span>u+w<span class="w"> </span>/var/www/html/ifrepo-admin
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Create and Switch to the <code class="docutils literal notranslate"><span class="pre">ifdev</span></code> Branch</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>ifdev
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Install Composer Dependencies</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer<span class="w"> </span>install<span class="w"> </span>--no-dev<span class="w"> </span>--optimize-autoloader<span class="w"> </span>--working-dir<span class="o">=</span>/var/www/html/ifrepo-admin
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Set Permissions and Ownership</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/media/
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/app/tmp
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/app/log
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/uploads
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/media
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/app/tmp
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/app/log
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/uploads
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p><strong>Set Permissions and Ownership for HTMLPurifier Definitions</strong></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/ifrepo-admin/vendor/ezyang/htmlpurifier/library/HTMLPurifier/DefinitionCache
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p><strong>Install</strong></p></li>
+</ol>
+<p>Follow the general installation instructions given in <a class="reference internal" href="../replicate/3-install.html"><span class="doc std std-doc">install</span></a>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\developers\local-remote-env"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../replicate/3-install.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Providence and Pawtucket2 Installation</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-logic">Workflow logic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branches">Branches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syncing-the-remote-and-local-systems">Syncing the Remote and Local Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-workflow">Implement the Workflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-server">On the Server</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-application-is-not-installed">If application is not installed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#if-application-is-already-installed">If application is already installed</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-local-machine">On the Local Machine</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Imagining Futures repository team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  v. 0.0.3 [unreleased]<br /><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
