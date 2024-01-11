@@ -1,10 +1,11 @@
-# Admin's Guide
-This is the user type for administrative people of Imagining Futures Repository. They are responsible for:
--xx
--yy
--tt
+# Admin Guide
 
-In this section, we will explain how to
--xx
--yy
--tt
+Imagining Futures Repository Admin (Administrator) is the most authoritative role in repository. They are not only responsible for managing data but also managing metadata, controlled vocabularies, relationships and administrative page interface. 
+
+```{note}
+Please keep in mind that Collectors are only responsible for Data Preparation and Data Ingestion on Middleware. This page is created to inform Administrators.
+```
+
+In this section we will briefly explain how to use the administrative part of the Collective Access under "General View", "Creating Data", "Creating Metadata Element", "Lists & List Items", "User Interface" and "Relationships" titles.
+
+
