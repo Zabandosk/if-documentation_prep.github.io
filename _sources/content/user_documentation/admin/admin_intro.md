@@ -8,4 +8,7 @@ Please keep in mind that Collectors are only responsible for Data Preparation an
 
 In this section we will briefly explain how to use the administrative part of the Collective Access under "General View", "Creating Data", "Creating Metadata Element", "Lists & List Items", "User Interface" and "Relationships" titles.
 
+```{tableofcontents}
+```
+
 

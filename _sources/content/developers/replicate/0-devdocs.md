@@ -1,4 +1,4 @@
-# IF Repository Developers Guide
+# Developers Guide
 
 This guide have the intention of describe the adaptations made to the Collective Access software to fit the needs of the Imagining Futures Repository. It is not intended to be a complete guide to the Collective Access software, but rather a guide to the adaptations made to it.
 
