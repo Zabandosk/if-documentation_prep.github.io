@@ -10,19 +10,23 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 
 ## Navigation
 
-Admin interface has a navigation bar with the titles of the main sections. You can access every part of the website by using the navigation bar {ref}`directive-fig`. {ref}`<directive-fig>`
+Admin interface has a navigation bar with the titles of the main sections. You can access every part of the website by using the navigation bar.
+- {ref}`Fly to the droid <navbar>`
+- {numref}`Figure {number}: {name} <navbar>`
+{ref}`Fly to the droid <navbar>`
+{numref}`Figure {number}: {name} <navbar>`
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_NavBar.png
 ---
 width: 100%
-
+name: navbar
 ---
 Navigation Bar
 ```
 
 ### Home
 
-On the Home page you can see your widgets. There is counts widget by default which displays the number of the data by their type. In fig 2 you can see there are 137 objects, 83 entities, 272 places and 70 collections in our database. 
+On the Home page you can see your widgets [Fig. 2] (). There is counts widget by default which displays the number of the data by their type. In fig 2 you can see there are 137 objects, 83 entities, 272 places and 70 collections in our database. 
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.png
 ---
