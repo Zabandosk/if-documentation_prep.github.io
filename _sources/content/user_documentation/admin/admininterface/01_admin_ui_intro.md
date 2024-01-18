@@ -14,7 +14,7 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 ### Home
 
 ![adminhome01](/if-documentation_prep.github.io/_static/images/user_documentation/admin/AdminUI_Home_01.JPG)
-
+![adminhome01](../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG)
 ### New
 
 ### Find
