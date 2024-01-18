@@ -16,10 +16,17 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 ![adminhome01](../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG)
 
 
+```{image} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG
+:alt: asdasd
+:class: bg-primary mb-1
+:width: 800px
+:align: center
+```
 
 ```{image} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG
 :alt: asdasd
 :class: bg-primary mb-1
+:width: auto
 :align: center
 ```
 
