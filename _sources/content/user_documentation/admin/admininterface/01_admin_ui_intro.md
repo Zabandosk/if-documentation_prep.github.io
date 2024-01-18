@@ -54,16 +54,20 @@ height: 15em
 name: new1
 align: left
 ---
-Widgets
+New dropdown menu
 ```
+
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New_02.png
 ---
 height: 15em
 name: new2
 align: right
 ---
-Widgets
+New menu, sub items
 ```
+
++++ {"meta":"data"}
+
 ### Find
 
 
