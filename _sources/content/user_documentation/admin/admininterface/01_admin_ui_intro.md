@@ -10,12 +10,22 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 
 ## Navigation
 
+Admin interface has a navigation bar with the titles of the main sections. You can access every part of the website by using the navigation bar (fig. 1). 
+
+```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_NavBar.png
+---
+width: 100%
+
+---
+Navigation Bar
+```
 
 ### Home
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.png
 ---
 width: 100%
+
 ---
 Home page
 ```
@@ -29,3 +39,5 @@ Home page
 ### Import
 
 ### History
+
+### Search Bar
