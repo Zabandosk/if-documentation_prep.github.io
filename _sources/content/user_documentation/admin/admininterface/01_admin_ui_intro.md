@@ -19,8 +19,7 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 :width: 100%
 :align: center
 ```
-
-```{image} ../../../../_static/images/user_documentation/admin/test.png
+```{image} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.png
 :alt: asdasd
 :class: bg-primary mb-1
 :width: 100%
