@@ -46,24 +46,27 @@ On this screes you can select any widget that you want by pressing the "plus but
 
 ### New
 
-On the navigation bar, if you move your cursor on "new" text, you can access the dropdown menu under that section ({numref}`Figure {number} <new>`). Those menu items are object types of our repository. If you click on any of the item, you directly go to creating "new" data page. Creating a new data is explained on ["Creating Data"](../admininterface/02_creatingdata.md) page with details.
+On the navigation bar, if you move your cursor on "new" text, you can access the dropdown menu under that section ({numref}`Figure {number} <new1>`). Those menu items are data types of our repository. Some of the items has sub items under them. If you move your curser over those you can see the menu is expanding ({numref}`Figure {number} <new2>`). If you click on any of the item, you directly go to creating "new" data page. Creating a new data is explained on [Creating Data](../admininterface/02_creatingdata.md) page with details.
 
-```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New.png
+```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New_01.png
 ---
 height: 15em
-name: new
+name: new1
+align: left
 ---
 Widgets
 ```
-```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New.png
+```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New_02.png
 ---
-height: 200px
-name: news
+height: 15em
+name: new2
+align: right
 ---
 Widgets
 ```
-
 ### Find
+
+
 
 ### Manage
 
