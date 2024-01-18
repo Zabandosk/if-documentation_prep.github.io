@@ -50,14 +50,14 @@ On the navigation bar, if you move your cursor on "new" text, you can access the
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New.png
 ---
-height: 10em
+height: 15em
 name: new
 ---
 Widgets
 ```
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New.png
 ---
-height: 50px
+height: 200px
 name: news
 ---
 Widgets
