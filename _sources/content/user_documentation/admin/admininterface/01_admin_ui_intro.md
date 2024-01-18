@@ -71,12 +71,20 @@ New menu, sub items
 
 ### Find
 
-Similar to New section, when you move your cursor on "Find" text, you will see a dropbox menu listing the data types (({numref}`Figure {number} <find1>`). 
+Similar to New section, when you move your cursor on "Find" text, you will see a dropbox menu listing the data types ({numref}`Figure {number} <find1>`). 
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Find_01.png
 ---
 height: 15em
 name: find1
+align: left
+---
+Find dropdown menu
+```
+```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Find_02.png
+---
+height: 15em
+name: find2
 align: left
 ---
 Find dropdown menu
