@@ -17,6 +17,14 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 
 
 <img src"../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG" alt="test" class="bg-primary">
+
+```{image} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG
+:alt: asdasd
+:class: bg-primary mb-1
+:width: 200px
+:align: center
+```
+
 ### New
 
 ### Find
