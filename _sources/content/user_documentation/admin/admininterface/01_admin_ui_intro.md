@@ -52,6 +52,7 @@ On the navigation bar, if you move your cursor on "new" text, you can access the
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New_01.png
 ---
 height: 15em
+width: 15em
 name: new1
 align: left
 ---
@@ -68,8 +69,8 @@ New menu, sub items
 ```
 ````
 
-
 ---
+
 
 ### Find
 
