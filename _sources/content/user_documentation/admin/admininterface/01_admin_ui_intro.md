@@ -22,7 +22,7 @@ Navigation Bar
 
 ### Home
 
-On the Home page you can see your widgets ({numref}`<home1>`). There is counts widget by default which displays the number of the data by their type. In fig 2 you can see there are 137 objects, 83 entities, 272 places and 70 collections in our database. 
+On the Home page you can see your widgets ({numref}`<home1>`) ({numref}`Figure {number} <home1>`). There is counts widget by default which displays the number of the data by their type. In fig 2 you can see there are 137 objects, 83 entities, 272 places and 70 collections in our database. 
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.png
 ---
