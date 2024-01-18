@@ -15,9 +15,9 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Home_01.png
 ---
-
+width: 100%
 ---
-Caption is here
+Home page
 ```
 
 ### New
