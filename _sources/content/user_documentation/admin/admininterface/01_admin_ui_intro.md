@@ -15,6 +15,8 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 
 ![adminhome01](../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG)
 
+
+<img src"../../../../_static/images/user_documentation/admin/AdminUI_Home_01.JPG" alt="test" class="bg-primary">
 ### New
 
 ### Find
