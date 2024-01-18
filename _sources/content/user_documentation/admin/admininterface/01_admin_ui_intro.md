@@ -46,6 +46,16 @@ On this screes you can select any widget that you want by pressing the "plus but
 
 ### New
 
+On the navigation bar, if you move your cursor on "new" text, you can access the dropdown menu under that section ({numref}`Figure {number} <new>`). Those menu items are object types of our repository. If you click on any of the item, you directly go to creating "new" data page. Creating a new data is explained on ["Creating Data"](../admininterface/02_creatingdata.md) page with details.
+
+```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New.png
+---
+width: 100%
+name: new
+---
+Widgets
+```
+
 ### Find
 
 ### Manage
