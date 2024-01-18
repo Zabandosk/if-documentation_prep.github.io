@@ -71,8 +71,9 @@ New menu, sub items
 
 ### Find
 
-Similar to New section, when you move your cursor on "Find" text, you will see a dropbox menu listing the data types ({numref}`Figure {number} <find1>`). 
+Similar to New section, when you move your cursor on "Find" text, you will see a dropbox menu listing the data types ({numref}`Figure {number} <find1>`). While "New" title is for "Creating" a data, you can think "Find" title is for "Searching" the data. And from this dropdown menu, you can choose which data type ([visit Data Types section](../admininterface/02_creatingdata.md/datatypes) to learn more about IF Repository Data Types) you can choose for searching. 
 
+([visit Data Types section](datatypes)
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_Find_01.png
 ---
 height: 15em
@@ -85,9 +86,9 @@ Find dropdown menu
 ---
 height: 15em
 name: find2
-align: left
+align: right
 ---
-Find dropdown menu
+Find menu, sub items
 ```
 
 <br><br><br><br><br><br><br><br><br><br><br>
