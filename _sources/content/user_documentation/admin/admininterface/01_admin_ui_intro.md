@@ -48,11 +48,10 @@ On this screes you can select any widget that you want by pressing the "plus but
 
 On the navigation bar, if you move your cursor on "new" text, you can access the dropdown menu under that section ({numref}`Figure {number} <new1>`). Those menu items are data types of our repository. Some of the items has sub items under them. If you move your curser over those you can see the menu is expanding ({numref}`Figure {number} <new2>`). If you click on any of the item, you directly go to creating "new" data page. Creating a new data is explained on [Creating Data](../admininterface/02_creatingdata.md) page with details.
 
-````{div} full-width
+
 ```{figure} ../../../../_static/images/user_documentation/admin/AdminUI_New_01.png
 ---
 height: 15em
-width: 15em
 name: new1
 align: left
 ---
@@ -64,10 +63,11 @@ New dropdown menu
 height: 15em
 name: new2
 align: right
+figclass: margin
 ---
 New menu, sub items
 ```
-````
+
 
 ---
 
