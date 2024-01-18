@@ -67,16 +67,9 @@ align: right
 New menu, sub items
 ```
 
-
----
-   <br><br><br><br>
-
-
-
+   <br><br><br><br><br><br><br><br><br><br><br><br>
 
 ### Find
-
-
 
 ### Manage
 
