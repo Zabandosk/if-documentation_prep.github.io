@@ -63,7 +63,6 @@ New dropdown menu
 height: 15em
 name: new2
 align: right
-figclass: margin
 ---
 New menu, sub items
 ```
@@ -71,7 +70,11 @@ New menu, sub items
 
 ---
 
+   
 
+
+
+   
 ### Find
 
 
