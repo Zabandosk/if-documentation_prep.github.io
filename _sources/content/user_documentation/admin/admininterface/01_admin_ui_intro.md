@@ -20,7 +20,7 @@ If you want to see the general aspects of the Pawtucket2, which we call "user in
 :align: center
 ```
 
-```{image} ../../../../_static/images/user_documentation/admin/test.JPG
+```{image} ../../../../_static/images/user_documentation/admin/test.png
 :alt: asdasd
 :class: bg-primary mb-1
 :width: 100%
